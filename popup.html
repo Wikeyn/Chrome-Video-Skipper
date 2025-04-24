@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>视频跳过设置</title>
+    <title>Anime op and ed skipper</title>
     <style>
         body {
             width: 400px;
@@ -119,39 +119,39 @@
 </head>
 <body>
     <div class="container">
-        <h2>视频跳过设置</h2>
+        <h2>Anime op and ed skipper</h2>
         
-        <input type="text" id="searchBox" class="search-box" placeholder="搜索分组...">
+        <input type="text" id="searchBox" class="search-box" placeholder="search group...">
         
         <div class="group-list" id="groupList">
-            <div class="no-groups">暂无分组，请创建新分组</div>
+            <div class="no-groups">no group,pls create a new group</div>
         </div>
 
         <div class="input-group">
-            <input type="text" id="groupName" placeholder="输入分组名称">
-            <button id="addGroup">添加分组</button>
+            <input type="text" id="groupName" placeholder="enter the group name">
+            <button id="addGroup">create a new group</button>
         </div>
 
         <div class="input-group">
-            <label>跳过1:</label>
-            <input type="number" id="skip1Min" min="0" max="59" value="0">分
-            <input type="number" id="skip1Sec" min="0" max="59" value="0">秒
+            <label>skip1:</label>
+            <input type="number" id="skip1Min" min="0" max="59" value="0">min
+            <input type="number" id="skip1Sec" min="0" max="59" value="0">sec
         </div>
 
         <div class="input-group">
-            <label>跳过2:</label>
-            <input type="number" id="skip2Min" min="0" max="59" value="0">分
-            <input type="number" id="skip2Sec" min="0" max="59" value="0">秒
+            <label>skip2:</label>
+            <input type="number" id="skip2Min" min="0" max="59" value="0">min
+            <input type="number" id="skip2Sec" min="0" max="59" value="0">sec
         </div>
 
         <div class="button-group">
-            <button id="saveBtn">保存设置</button>
-            <button id="deleteBtn">删除分组</button>
-            <button id="importBtn">导入设置</button>
-            <button id="exportBtn">导出设置</button>
+            <button id="saveBtn">save setting</button>
+            <button id="deleteBtn">delete group</button>
+            <button id="importBtn">import setting</button>
+            <button id="exportBtn">export setting</button>
         </div>
 
-        <div class="status" id="status">就绪</div>
+        <div class="status" id="status">ready</div>
     </div>
     <script src="popup.js"></script>
 </body>
