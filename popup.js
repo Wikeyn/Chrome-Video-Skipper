@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         pinnedGroups.sort((a, b) => (groups[b].pinnedTime || 0) - (groups[a].pinnedTime || 0));
 
         if (pinnedGroups.length === 0 && unpinnedGroups.length === 0) {
-            groupList.innerHTML = '<div class="no-groups">暂无分组，请创建新分组</div>';
+            groupList.innerHTML = '<div class="no-groups">no group,pls create a new one</div>';
             return;
         }
 
@@ -79,14 +79,14 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const timesSpan = document.createElement('span');
         timesSpan.className = 'group-times';
-        timesSpan.textContent = `跳过1: ${formatTime(settings.skip1)} | 跳过2: ${formatTime(settings.skip2)}`;
+        timesSpan.textContent = `skip1: ${formatTime(settings.skip1)} | skip2: ${formatTime(settings.skip2)}`;
         
         const actionsDiv = document.createElement('div');
         actionsDiv.className = 'group-actions';
         
         const pinButton = document.createElement('button');
         pinButton.className = `action-button pin ${settings.pinned ? 'active' : ''}`;
-        pinButton.innerHTML = settings.pinned ? '取消置顶' : '置顶';
+        pinButton.innerHTML = settings.pinned ? 'unpin' : 'pin2top';
         pinButton.addEventListener('click', (e) => {
             e.stopPropagation();
             togglePin(group);
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
         skip1Sec.value = settings.skip1 % 60;
         skip2Min.value = Math.floor(settings.skip2 / 60);
         skip2Sec.value = settings.skip2 % 60;
-        status.textContent = `已选择: ${group}`;
+        status.textContent = `selected: ${group}`;
         updateGroupList(searchBox.value);
 
         // 向 content script 发送当前选中的组
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
     saveBtn.onclick = function() {
         const name = groupName.value.trim();
         if (!name) {
-            status.textContent = '请输入分组名称';
+            status.textContent = 'name the group';
             return;
         }
 
@@ -171,17 +171,17 @@ document.addEventListener('DOMContentLoaded', function() {
         saveGroups();
         currentGroup = name;
         updateGroupList(searchBox.value);
-        status.textContent = `已保存: ${name}`;
+        status.textContent = `saved: ${name}`;
     };
 
     // 删除分组
     deleteBtn.onclick = function() {
         if (!currentGroup) {
-            status.textContent = '请先选择要删除的分组';
+            status.textContent = 'select the group to delete';
             return;
         }
 
-        if (confirm(`确定要删除分组 ${currentGroup} 吗？`)) {
+        if (confirm(`delete the group ${currentGroup}?`)) {
             delete groups[currentGroup];
             saveGroups();
             currentGroup = null;
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
             skip2Min.value = 0;
             skip2Sec.value = 0;
             updateGroupList(searchBox.value);
-            status.textContent = '分组已删除';
+            status.textContent = 'group deleted';
         }
     };
 
@@ -220,9 +220,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     Object.assign(groups, importedGroups);
                     saveGroups();
                     updateGroupList(searchBox.value);
-                    status.textContent = '设置导入成功';
+                    status.textContent = 'setting imported';
                 } catch (error) {
-                    status.textContent = '导入失败：文件格式错误';
+                    status.textContent = 'import failed: file format error';
                 }
             };
             reader.readAsText(file);
@@ -239,6 +239,6 @@ document.addEventListener('DOMContentLoaded', function() {
         a.download = 'skip_settings.json';
         a.click();
         URL.revokeObjectURL(url);
-        status.textContent = '设置已导出';
+        status.textContent = 'setting exported';
     };
 }); 
