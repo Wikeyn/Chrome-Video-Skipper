@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "视频跳过设置",
+  "name": "Anime op and ed skipper",
   "version": "1.0",
-  "description": "设置视频片头和片尾的跳过时间",
+  "description": "時を越えて",
   "permissions": [
     "storage",
     "activeTab",
