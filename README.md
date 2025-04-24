@@ -15,6 +15,6 @@ click it and create your own list or you could upload "test file.json" and try
 
 once the video like anime starts to play
 
-use "[" to skip1,use "]" to skip2
+use "Bracket[" to skip1,use "Bracket]" to skip2
 
-if you mistakenly pressed wrong one,you could use "\" to cancel the last operate
+if you mistakenly pressed wrong one,you could use "backslash" to cancel the last operate
