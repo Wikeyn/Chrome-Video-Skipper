@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>视频跳过设置</title>
+    <style>
+        body {
+            width: 400px;
+            padding: 20px;
+            background-color: #1e1e1e;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .search-box {
+            width: 100%;
+            padding: 8px;
+            background-color: #2d2d2d;
+            color: #ffffff;
+            border: 1px solid #333;
+            border-radius: 4px;
+        }
+        .group-list {
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #333;
+            padding: 10px;
+            background-color: #2d2d2d;
+            border-radius: 4px;
+        }
+        .group-item {
+            padding: 8px;
+            margin: 5px 0;
+            background-color: #3d3d3d;
+            cursor: pointer;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .group-item:hover {
+            background-color: #4d4d4d;
+        }
+        .group-item.selected {
+            background-color: #4CAF50;
+        }
+        .group-name {
+            flex-grow: 1;
+        }
+        .group-times {
+            font-size: 0.9em;
+            color: #aaa;
+        }
+        .group-actions {
+            display: flex;
+            gap: 5px;
+        }
+        .action-button {
+            padding: 4px 8px;
+            background-color: #2d2d2d;
+            border: 1px solid #333;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 0.8em;
+        }
+        .action-button:hover {
+            background-color: #3d3d3d;
+        }
+        .action-button.pin {
+            background-color: #ff9800;
+        }
+        .action-button.pin:hover {
+            background-color: #f57c00;
+        }
+        .input-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 5px 0;
+        }
+        input, select {
+            padding: 5px;
+            background-color: #2d2d2d;
+            color: #ffffff;
+            border: 1px solid #333;
+            border-radius: 4px;
+        }
+        button {
+            padding: 8px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .status {
+            margin-top: 10px;
+            color: #888;
+        }
+        .no-groups {
+            text-align: center;
+            color: #888;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>视频跳过设置</h2>
+        
+        <input type="text" id="searchBox" class="search-box" placeholder="搜索分组...">
+        
+        <div class="group-list" id="groupList">
+            <div class="no-groups">暂无分组，请创建新分组</div>
+        </div>
+
+        <div class="input-group">
+            <input type="text" id="groupName" placeholder="输入分组名称">
+            <button id="addGroup">添加分组</button>
+        </div>
+
+        <div class="input-group">
+            <label>跳过1:</label>
+            <input type="number" id="skip1Min" min="0" max="59" value="0">分
+            <input type="number" id="skip1Sec" min="0" max="59" value="0">秒
+        </div>
+
+        <div class="input-group">
+            <label>跳过2:</label>
+            <input type="number" id="skip2Min" min="0" max="59" value="0">分
+            <input type="number" id="skip2Sec" min="0" max="59" value="0">秒
+        </div>
+
+        <div class="button-group">
+            <button id="saveBtn">保存设置</button>
+            <button id="deleteBtn">删除分组</button>
+            <button id="importBtn">导入设置</button>
+            <button id="exportBtn">导出设置</button>
+        </div>
+
+        <div class="status" id="status">就绪</div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html> 
