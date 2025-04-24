@@ -5,7 +5,7 @@ load this extension on "Manage extension" page
 
 ensure you have opened developer mode frist
 
-click "load unpacked" and select "skipperO" file
+click "load unpacked" and select the file
 
 open a random website can play video
 you could click the extension button to find skipperO
