@@ -17,4 +17,4 @@ once the video like anime starts to play
 
 use "[" to skip1,use "]" to skip2
 
-if you mistakenly pressed wrong one,you could use "\" next to the "]" to cancel the last operate
+if you mistakenly pressed wrong one,you could use "\" to cancel the last operate
