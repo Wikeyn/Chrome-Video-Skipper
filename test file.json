@@ -1,0 +1,22 @@
+{
+    "The Boy and the Heron": {
+        "skip1": 10,
+        "skip2": 270
+    },
+    "steins;gate0": {
+        "skip1": 88,
+        "skip2": 88
+    },
+    "death note": {
+        "skip1": 80,
+        "skip2": 0
+    },
+    "breaking bad": {
+        "skip1": 15,
+        "skip2": 52
+    },
+    "Wind Breaker": {
+        "skip1": 88,
+        "skip2": 88
+    }
+}
